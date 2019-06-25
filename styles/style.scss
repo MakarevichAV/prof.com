@@ -763,6 +763,75 @@ body {
     background: url(../images/ikons/cross.png) no-repeat center center / contain;
 }
 
+.new-item {
+    border: 1px solid #c2c2c2;
+    box-shadow: 2px 3px 5px 2px #c2c2c2;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 50px;
+    .slide {
+        display: none;
+    }
+    h2 {
+        text-align: left;
+        font-size: 20px;
+        font-family: $font-georgia;
+        color: #464646;
+    }
+    .click-slide {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .up-down {
+            font-size: 16px;
+            color: $blue;
+        }
+    }
+    p {
+        font-family: $font-georgia;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #464646;
+    }
+    .form-comment {
+        textarea {
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .submit {
+            border: none;
+            padding: 5px 10px;
+        }
+    }
+    .comment {
+        border: 1px solid #c2c2c2;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+        max-width: 500px;
+        box-shadow: 2px 3px 5px 2px #c2c2c2;
+        .login, .user-name {
+            font-family: $font-georgia;
+            color: $blue;
+            font-style: italic;
+        } 
+        .login {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+        .user-name {
+            font-size: 10px;
+        }
+        .txt {
+            font-style: italic;
+            font-size: 14px;
+        }
+    }
+}
+
 
 
 

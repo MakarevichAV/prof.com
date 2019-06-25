@@ -145,7 +145,7 @@ password2.keyup( function () {
 
 } );
 
-console.log(passwordReg);
+// console.log(passwordReg);
 
             // Всплывающее окно входа 
 // при клике на "Войти" открытие всплывающего окна popup
@@ -236,50 +236,19 @@ $(document).click( function (e) {
 } );
 
 
-            // AJAX  // *
-// let exit = document.querySelector('.exit');
+            // Разворачивание и сворачивание новостей
 
-// exit.addEventListener( 'click', function () {
+let clickSlide = $('.click-slide');
+clickSlide.click( function () {
 
-//     let xhr = new XMLHttpRequest;
-//     xhr.open( 'GET', `/handlers/head.php?exit=true` );
-//     xhr.send();
-//     xhr.addEventListener( 'load', function () {
-//         let data = JSON.parse(xhr.responseText);
-//         console.dir(data);
-//     } );
+    let slideDiv = $(this).next('.slide');
+    // slideDiv.slideDown();
+    if ( slideDiv.attr('style') != 'display: block;' ) {
+        slideDiv.slideDown();
+        $(this).find( $('.up-down') ).html('Свернуть&#9650;');
+    } else {
+        slideDiv.slideUp();
+        $(this).find( $('.up-down') ).html('Читать&#9660;');
+    }
 
-// } );
-
-
-// отправка get запроса с передачей параметров
-// $('.exit').click( function() {
-//     // $.get('/handlers/exit.php?exit=true',
-//     //     function(data){
-//     //         if (data.success) {
-//     //             // $('#msg').html(data.success.msg);
-//     //             console.log(data.success);
-//     //         } else {
-//     //             // $('#msg').html(data.error.msg);
-//     //         }
-//     //     }, "json");
-//     // return false;
-
-
-//     $.get(
-//         "/handlers/exit.php",
-//         {
-//         exit: true
-//         },
-//         onAjaxSuccess
-//     );
-    
-//     function onAjaxSuccess(data)
-//     {
-//         // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
-//         alert(data);
-//     }
-//     return false;
-
-// });
-
+} );

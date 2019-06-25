@@ -850,6 +850,94 @@ body {
   background: url(../images/ikons/cross.png) no-repeat center center/contain;
 }
 
+.new-item {
+  border: 1px solid #c2c2c2;
+  -webkit-box-shadow: 2px 3px 5px 2px #c2c2c2;
+          box-shadow: 2px 3px 5px 2px #c2c2c2;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+.new-item .slide {
+  display: none;
+}
+
+.new-item h2 {
+  text-align: left;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #464646;
+}
+
+.new-item .click-slide {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.new-item .click-slide .up-down {
+  font-size: 16px;
+  color: #3b6e8b;
+}
+
+.new-item p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #464646;
+}
+
+.new-item .form-comment textarea {
+  width: 100%;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+.new-item .form-comment .submit {
+  border: none;
+  padding: 5px 10px;
+}
+
+.new-item .comment {
+  border: 1px solid #c2c2c2;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  -webkit-box-shadow: 2px 3px 5px 2px #c2c2c2;
+          box-shadow: 2px 3px 5px 2px #c2c2c2;
+}
+
+.new-item .comment .login, .new-item .comment .user-name {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #3b6e8b;
+  font-style: italic;
+}
+
+.new-item .comment .login {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.new-item .comment .user-name {
+  font-size: 10px;
+}
+
+.new-item .comment .txt {
+  font-style: italic;
+  font-size: 14px;
+}
+
 .margin-bottom50 {
   margin-bottom: 50px;
 }
