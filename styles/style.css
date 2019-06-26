@@ -886,6 +886,7 @@ body {
 .new-item .click-slide .up-down {
   font-size: 16px;
   color: #3b6e8b;
+  margin-left: 10px;
 }
 
 .new-item p {
