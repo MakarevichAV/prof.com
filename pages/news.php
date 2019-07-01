@@ -158,14 +158,18 @@
                             <?php endif; ?>
         
                         </div>
-
-                        <?php 
-                            if ( $_SESSION['user']['login'] == 'admin' ) {
-                                echo 'Здесь будет кнопка удаления новости';
-                            }
-                        ?>
-                        <div class="button-del">Удалить</div>
-
+                        
+                        <?php if ($_SESSION['user']['login'] == 'admin'): ?>
+                            <div class="button-del button size14 padding5-15 inline-block">Удалить</div>
+                            <div class="confirm">
+                                <p>Вы уверены, что хотите удалить новость?</p>
+                                <form action="/handlers/delNew.php?id=<?=$newId?>" method="post">
+                                    <input type="checkbox" name="yes" checked><input type="submit" value="Да" class="button size14 padding5-15 bord-none margin-right30">
+                                    <input type="button" value="Нет" class="no button size14 padding5-15 bord-none">
+                                </form>
+                            </div>
+                        <?php endif; ?>
+                        
                     </div>
 
                 <?php endforeach; ?>

@@ -729,6 +729,7 @@ body {
   font-size: 22px;
   font-family: Georgia, "Times New Roman", Times, serif;
   cursor: pointer;
+  outline: none;
 }
 
 .arrow-up {
@@ -985,6 +986,10 @@ body {
   margin-left: 5px;
 }
 
+.confirm {
+  display: none;
+}
+
 .margin-bottom50 {
   margin-bottom: 50px;
 }
@@ -1078,6 +1083,18 @@ body {
 .disabled-button {
   background: #a7a7a7;
   cursor: none;
+}
+
+.size14 {
+  font-size: 14px;
+}
+
+.padding5-15 {
+  padding: 5px 15px;
+}
+
+.bord-none {
+  border: none;
 }
 
 @media (max-width: 1050px) {

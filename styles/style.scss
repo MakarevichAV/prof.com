@@ -652,6 +652,7 @@ body {
     font-size: 22px;
     font-family: $font-georgia;
     cursor: pointer;
+    outline: none;
 }
 .arrow-up {
     position: fixed;
@@ -871,6 +872,9 @@ body {
 .delete {
     margin-left: 5px;
 }
+.confirm {
+    display: none;
+}
 
 
 
@@ -944,6 +948,15 @@ body {
 .disabled-button {
     background: #a7a7a7;
     cursor: none;
+}
+.size14 {
+    font-size: 14px;
+}
+.padding5-15 {
+    padding: 5px 15px;
+}
+.bord-none {
+    border: none;
 }
 
 

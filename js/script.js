@@ -252,3 +252,21 @@ clickSlide.click( function () {
     }
 
 } );
+
+
+            // Разворачивание и сворачивание подтверждения удаления новости
+
+let buttonDel = $('.button-del'),
+    no = $('.no');
+
+buttonDel.click( function () {
+
+    let confirm = $(this).next('.confirm');
+    confirm.slideDown();
+
+} );
+
+no.click( function () {
+    let confirm = $('.confirm');
+    confirm.slideUp();
+} );
