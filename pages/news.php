@@ -158,6 +158,14 @@
                             <?php endif; ?>
         
                         </div>
+
+                        <?php 
+                            if ( $_SESSION['user']['login'] == 'admin' ) {
+                                echo 'Здесь будет кнопка удаления новости';
+                            }
+                        ?>
+                        <div class="button-del">Удалить</div>
+
                     </div>
 
                 <?php endforeach; ?>

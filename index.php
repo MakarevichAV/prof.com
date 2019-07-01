@@ -7,10 +7,10 @@
 
     
 ?>
-
+<div class="prof-msg"></div>
 
 <div class="content">
-    <h1 class="margin-bottom50 margin-top50 flex text-left"><span class="icon shield margin-right15"></span>НЕЗАВИСИМЫЙ профсоюз - это защита ваших трудовых и социально-экономических прав</h1>
+    <h1 class="margin-bottom50 flex text-left"><span class="icon shield margin-right15"></span>НЕЗАВИСИМЫЙ профсоюз - это защита ваших трудовых и социально-экономических прав</h1>
     <div class="quote margin-bottom20">
         <p class="quote-text margin-bottom10">
             Есть три организации, которым не станет бросать вызов ни один разумный человек. 
@@ -84,7 +84,7 @@
             ...<br />
         </p>
     </div>
-    <h2 id="contact" class="margin-bottom50 margin-top50 flex text-left"><span class="icon contact-icon margin-right15"></span>Наши контакты</h2>
+    <h2 id="contact" class="margin-bottom20 margin-top50 flex text-left"><span class="icon contact-icon margin-right15"></span>Наши контакты</h2>
     <div class="content-text margin-bottom20">
         <p class="margin-bottom10"><span class="bold">Председатель профсоюза:</span> Додонов Андрей Евгеньевич</p>
         <p class="margin-bottom10"><span class="bold">Телефон:</span> +7 (917) 588-45-45 </p>

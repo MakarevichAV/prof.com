@@ -939,6 +939,52 @@ body {
   font-size: 14px;
 }
 
+.prof-msg {
+  height: 350px;
+  background: url(../images/prof.jpg) no-repeat center top/cover;
+  -webkit-box-shadow: inset 0px -24px 26px 32px #ffffff;
+          box-shadow: inset 0px -24px 26px 32px #ffffff;
+  opacity: 0.7;
+}
+
+.paragraph {
+  border: 2px solid #3b6e8b;
+  padding: 5px 15px;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.paragraph .crossDelete {
+  width: 30px;
+  height: 30px;
+  background: url(../images/ikons/cross.png) no-repeat center center/contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.add, .delete {
+  background: #ffffff;
+  cursor: pointer;
+  color: #3b6e8b;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 50%;
+}
+
+.add {
+  margin-right: 5px;
+}
+
+.delete {
+  margin-left: 5px;
+}
+
 .margin-bottom50 {
   margin-bottom: 50px;
 }
@@ -1104,6 +1150,34 @@ body {
   }
   .margin-bottom-mob15 {
     margin-bottom: 15px !important;
+  }
+  .prof-msg {
+    height: 250px;
+  }
+  .icon {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .content h1 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  .prof-msg {
+    height: 180px;
+  }
+  .icon {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  .prof-msg {
+    height: 130px;
+  }
+  .icon {
+    padding: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
