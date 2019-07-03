@@ -9,6 +9,9 @@ if ( !empty($_POST['yes']) && !empty($_GET['id']) ) {
     $qr = "DELETE FROM `news` WHERE `news`.`id` = '${'id'}'";
     $result = mysqli_query($connect, $qr);
 
+    $qrDelFiles = "DELETE FROM `news_files` WHERE `new_id` = '${'id'}'";
+    $resultDelFiles = mysqli_query($connect, $qr);
+
     if ( $result ) {
         echo 'Новость удачно удалена';
     } else {

@@ -53,7 +53,6 @@
 //         NOW()
 //         );
 
-d($_POST);
 if ( $publish ) {
 
     $header = $_POST['header'];
@@ -70,7 +69,40 @@ if ( $publish ) {
                             )";
     $result = mysqli_query($connect, $qr);
     if ( $result ) {
-        echo 'Новость опубликована';
+
+        if ( !empty($_FILES) ) {
+            $qr = "SELECT * FROM `news` WHERE   `header` = '{$header}'
+                                        AND     `text` = '{$new}'";
+            $result = mysqli_query($connect, $qr);
+            $thisNew = mysqli_fetch_assoc($result);
+            foreach ( $_FILES['file']['tmp_name'] as $i => $v ) {
+                $fileName = $thisNew['id'] . '-' . $_FILES['file']['name'][$i];
+                copy($v, '../images/news/' . $fileName);
+                
+                // Добавляем файлы в Базу Данных в таблицу файлов news_files
+                $qrAddFile = "INSERT INTO `news_files` ( 
+                                                `file`, 
+                                                `new_id` 
+                                                ) 
+                                        VALUES (
+                                                '{$fileName}', 
+                                                '{$thisNew['id']}'
+                                                )";
+                $resultAddFile = mysqli_query($connect, $qrAddFile);
+                if ( $resultAddFile ) {
+                    $msg = 'Новость опубликована, файлы прикрепленны удачно';
+                } else {
+                    $msg = 'Новость опубликована, но файлы не прикрепились. Произошла Какая то ошибка.';
+                    // break;
+                }
+            }
+            
+            echo $msg;
+
+        } else {
+            echo 'Новость опубликована';
+        }
+
     } else {
         echo 'Ошибка публикации';
     }

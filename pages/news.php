@@ -108,14 +108,36 @@
                         $header = $val['header'];
                         $text = $val['text'];
                         $newId = $val['id'];
+
+                        // Подтягиваем файлы к новости (фотки, пдф)
+                        $qr = "SELECT * FROM `news_files` WHERE `new_id` = '{$newId}'";
+                        $resultFile = mysqli_query($connect, $qr);
+
+                        if ( mysqli_num_rows( $resultFile ) != 0 ) {
+                            while ( $rowFile = mysqli_fetch_assoc($resultFile) ) {
+                                $template['news'][$key]['files'][] = $rowFile;
+                            }
+                        }
+
                     ?>
                     <div class="new-item">
                         <p><?=$date?></p>
                         <h2 class="click-slide"><?=$header?> <span class="up-down">Читать&#9660;</span></h2>
                         <div class="slide">
                             <?=$text?>
-                            <!-- <img src="/images/news/01-30-1900-33-10.jpg" width="100%">
-                            <img src="/images/news/полиция юмора.png" width="100%"> -->
+
+                            <?php if ( isset( $template['news'][$key]['files'] ) ) :?>
+
+                                <?php foreach( $template['news'][$key]['files'] as $i => $v ): ?>
+
+                                    <img src="/images/news/<?=$v['file']?>" width="100%">
+
+                                <?php endforeach; ?>
+
+                            <?php else:?>
+                                <p class="italic light-gray">Нет прикрепленных файлов</p>
+                            <?php endif; ?>
+
                             <h2>Комментарии</h2>
                             <div class='content-text margin-bottom20'>
                                 <form class='form-comment' action='/pages/news.php?login=<?=$login?>&fio=<?=$fio?>&new_id=<?=$newId?>' method='post'>

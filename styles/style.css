@@ -1097,6 +1097,14 @@ body {
   border: none;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.light-gray {
+  color: #a7a7a7 !important;
+}
+
 @media (max-width: 1050px) {
   .wrapper {
     overflow: hidden;

@@ -27,9 +27,16 @@
                 if ( $_POST['password1'] === $_POST['password2'] ) {
 
                     $qr = "SELECT * FROM `registered` WHERE `login` = '${'login'}'";
-                    $result = mysqli_query($connect, $qr);
+                    $resultLogin = mysqli_query($connect, $qr);
 
-                    if ( mysqli_num_rows($result) == 0 ) {
+                    $qr = "SELECT * FROM `registered` WHERE `tel` = '${'tel'}'";
+                    $resultTel = mysqli_query($connect, $qr);
+
+                    $qr = "SELECT * FROM `registered` WHERE `email` = '${'email'}'";
+                    $resultEmail = mysqli_query($connect, $qr);
+                    
+                    // если нет совпадений логина телефона и почты
+                    if ( mysqli_num_rows($resultLogin) == 0 && mysqli_num_rows($resultTel) == 0 && mysqli_num_rows($resultEmail) == 0 ) {  
 
                         $qr = "INSERT INTO `registered` ( 
                                                         `fio`, 
@@ -60,10 +67,26 @@
                             $msg = "Произошла ошибка регистрации";
                             $classIcon = 'cross-inp';
                         }
-
+                    
+                    // Если совпадения есть
                     } else {
-                        $msg = "Пользователь с таким логином уже существует. Придумайте другой логин";
+
                         $classIcon = 'cross-inp';
+                        
+                        if ( mysqli_num_rows($resultLogin) != 0 ) {  // проверяем на совпадение логина
+
+                            $msg = "Пользователь с логином $login уже существует. Придумайте другой логин";
+
+                        } else if ( mysqli_num_rows($resultTel) != 0 ) {  // проверяем на совпадение телефона
+
+                            $msg = "Пользователь с телефоном $tel уже зарегестрирован";
+
+                        } else if ( mysqli_num_rows($resultEmail) != 0 ) {  // проверяем на совпадение email
+
+                            $msg = "Пользователь с электронной почтой $email  уже зарегестрирован";
+
+                        }
+                        
                     }
 
                 } else {
