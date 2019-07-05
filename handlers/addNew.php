@@ -90,10 +90,11 @@ if ( $publish ) {
                                                 )";
                 $resultAddFile = mysqli_query($connect, $qrAddFile);
                 if ( $resultAddFile ) {
+                    d($_FILES);
                     $msg = 'Новость опубликована, файлы прикрепленны удачно';
                 } else {
                     $msg = 'Новость опубликована, но файлы не прикрепились. Произошла Какая то ошибка.';
-                    // break;
+                    break;
                 }
             }
             

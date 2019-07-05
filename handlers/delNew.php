@@ -9,7 +9,7 @@ if ( !empty($_POST['yes']) && !empty($_GET['id']) ) {
     $qr = "DELETE FROM `news` WHERE `news`.`id` = '${'id'}'";
     $result = mysqli_query($connect, $qr);
 
-    $qrDelFiles = "DELETE FROM `news_files` WHERE `new_id` = '${'id'}'";
+    $qrDelFiles = "DELETE FROM `news_files` WHERE `new_id` = '${'id'}'";  // поработать над удалением файлов и комментариев  // Нужно ли вообще это???
     $resultDelFiles = mysqli_query($connect, $qr);
 
     if ( $result ) {

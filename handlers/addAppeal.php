@@ -1,5 +1,5 @@
 <?php
-    $title = 'Ответ на обращение';
+    $title = 'Обработка обращения';
     $main = '/index.php/';
     include($_SERVER['DOCUMENT_ROOT'].'/modules/head.php');
     include($_SERVER['DOCUMENT_ROOT'].'/modules/menu.php');
